@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Add these styles to fix the button visibility */
+    .contact-form .btn-primary {
+        background-color: var(--carolina-blue);
+        color: var(--text-dark) !important;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1rem;
+        margin-top: 1rem;
+        width: 100%;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .contact-form .btn-primary:hover {
+        background-color: var(--african-violet);
+        transform: translateY(-2px);
+    }
+
+    /* Ensure form contrast */
+    .contact-form input,
+    .contact-form textarea {
+        background-color: var(--text-dark);
+        color: var(--platinum);
+        border: 1px solid var(--mint-green);
+    }
+
+    .contact-form label {
+        color: var(--platinum);
+    }
+</style>
+
+<div class="container">
+    <div class="card">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team</p>
+
+        <div class="contact-grid">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <div class="info-box">
+                <h3>Contact Info</h3>
+                <p>📧 info@bikekitchen.nl</p>
+                <p>📞 +31 20 123 4567</p>
+                <p>📍 14 Bike Street, Amsterdam</p>
+                <p>⏰ Open daily 9AM - 7PM</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

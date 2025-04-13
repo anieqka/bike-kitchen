@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">The Bike Kitchen</h1>
+        <p class="hero-subtitle">Transforming Amsterdam's Orphaned Bikes</p>
+        <a href="{{ url_for('community') }}" class="cta-button">Join the Movement</a>
+    </div>
+</section>
+
+<section class="orphaned-bikes">
+    <div class="container">
+        <h2 class="section-title">Orphaned Bikes in Amsterdam</h2>
+        <p class="section-lead">Across Amsterdam, thousands of bicycles are abandoned—forgotten, rusting, turning into waste. They clog our streets, pollute our environment, and lose their purpose. But what if we could change that?</p>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-circle-container">
+                    <div class="stat-circle">
+                        <div class="stat-mask"></div>
+                        <div class="stat-number">15%</div>
+                    </div>
+                </div>
+                <p class="stat-label">of bikes abandoned annually</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-circle-container">
+                    <div class="stat-circle">
+                        <div class="stat-mask"></div>
+                        <div class="stat-number">15,000</div>
+                    </div>
+                </div>
+                <p class="stat-label">Bikes in canals yearly</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-circle-container">
+                    <div class="stat-circle">
+                        <div class="stat-mask"></div>
+                        <div class="stat-number">50%</div>
+                    </div>
+                </div>
+                <p class="stat-label">Waste reduction through reuse</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3 class="content-title">Why Orphaned Bikes Matter</h3>
+            <div class="content-text">
+                <p>Abandoned bikes are more than just an eyesore—they're a waste of resources, space, and potential. In cities with high bike use, like Amsterdam, thousands of bikes are left to rust every year, cluttering sidewalks and bike racks.</p>
+                
+                <p>Producing new bikes requires raw materials, energy, and transportation, all of which contribute to carbon emissions. Instead of letting old bikes go to waste, repairing and reusing them cuts down on pollution and supports a circular economy.</p>
+                
+                <p>Orphaned bikes take up valuable space in already crowded cities. When left unchecked, they make parking harder for active cyclists and create unnecessary obstacles in public spaces.</p>
+                
+                <p>Refurbished bikes can be donated or sold at affordable prices, making cycling accessible to more people. Community repair shops also create opportunities for skill-building and sustainable living.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+:root {
+    --platinum: #0A1128;
+    --african-violet: #001F54;
+    --carolina-blue: #034078;
+    --mint-green: #C8E4F9;
+    --text-dark: #FEFCFB;
+}
+
+.hero {
+    background: var(--carolina-blue);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--mint-green);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--platinum);
+    color: var(--text-dark);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+.orphaned-bikes {
+    padding: 4rem 0;
+    background: var(--carolina-blue);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-lead {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--text-dark);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.stat-circle-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+}
+
+.stat-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--mint-green); /* Changed background color */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--text-dark); /* This should match parent background */
+    clip-path: polygon(50% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%);
+    animation: rotateLoop 3s infinite linear;
+}
+
+@keyframes rotateLoop {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--carolina-blue);
+    z-index: 2;
+}
+
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--carolina-blue);
+    z-index: 2;
+}
+
+.stat-label {
+    color: var(--carolina-blue);
+    font-weight: 500;
+}
+
+.content-section {
+    background: var(--carolina-blue);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.content-title {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    document.querySelectorAll('.stat-item').forEach(item => {
+        observer.observe(item);
+    });
+});
+</script>
+{% endblock %}

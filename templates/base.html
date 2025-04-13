@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bike Kitchen</title>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    </head>    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">BikeKitchen</a>
+            <div class="nav-links">
+                <a href="{{ url_for('orphaned_bikes') }}">Orphaned Bikes</a>
+                <a href="{{ url_for('community') }}">Community</a>
+                <a href="{{ url_for('bike_kitchens') }}">Locations</a>
+                <a href="{{ url_for('how_we_help') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="{{ url_for('index') }}" class="logo">BikeKitchen</a>
+            <p class="footer-tagline">Pedaling towards a sustainable future</p>
+        </div>
+        
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('orphaned_bikes') }}">Orphaned Bikes</a></li>
+                    <li><a href="{{ url_for('bike_kitchens') }}">Locations</a></li>
+                    <li><a href="{{ url_for('how_we_help') }}">Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 BikeKitchen. All rights reserved.</p>
+    </div>
+</footer>

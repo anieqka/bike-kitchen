@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="bike-kitchens-container">
+        <h1 class="page-title animate-pop">Bike Kitchens in Amsterdam</h1>
+        <p class="page-description animate-fade">Find us at these locations</p>
+
+        <!-- Interactive Map Section -->
+        <div id="map" class="animate-card"></div>
+
+        <!-- Locations List -->
+        <section class="locations-list">
+            <!-- UVA Location -->
+            <div class="location-item animate-card">
+                <img src="{{ url_for('static', filename='images/uva.jpg') }}" 
+                     alt="UVA Roeterseiland Campus" 
+                     class="location-image">
+                <div class="location-info">
+                    <h3 class="location-title">UVA Roeterseiland Campus</h3>
+                    <p class="location-address">Roetersstraat 11, 1018 WB Amsterdam</p>
+                    <div class="location-features">
+                        <span class="feature-pill">24/7 Access</span>
+                        <span class="feature-pill">Workshops</span>
+                        <span class="feature-pill">Student Discount</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OBA Library Location -->
+            <div class="location-item animate-card">
+                <img src="{{ url_for('static', filename='images/oba.jpg') }}" 
+                     alt="OBA Library" 
+                     class="location-image">
+                <div class="location-info">
+                    <h3 class="location-title">OBA Central Library</h3>
+                    <p class="location-address">Oosterdokskade 143, 1011 DL Amsterdam</p>
+                    <div class="location-features">
+                        <span class="feature-pill">Free Clinics</span>
+                        <span class="feature-pill">Kids Programs</span>
+                        <span class="feature-pill">Cafe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spuistraat Location -->
+            <div class="location-item animate-card">
+                <img src="{{ url_for('static', filename='images/spuistraat.jpg') }}" 
+                     alt="Spuistraat 17" 
+                     class="location-image">
+                <div class="location-info">
+                    <h3 class="location-title">Spuistraat Workshop</h3>
+                    <p class="location-address">Spuistraat 17, 1012 SP Amsterdam</p>
+                    <div class="location-features">
+                        <span class="feature-pill">Vintage Bikes</span>
+                        <span class="feature-pill">Bike Sharing</span>
+                        <span class="feature-pill">Roof Terrace</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function initMap() {
+            // Amsterdam coordinates
+            const amsterdam = { lat: 52.3676, lng: 4.9041 };
+            
+            // Map configuration
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: amsterdam,
+                mapTypeControl: false,
+                streetViewControl: false,
+                styles: [{
+                    featureType: "poi",
+                    elementType: "labels",
+                    stylers: [{ visibility: "off" }]
+                }]
+            });
+
+            // Red pin marker configuration
+            const redPin = {
+                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                scaledSize: new google.maps.Size(32, 32),
+                anchor: new google.maps.Point(16, 32)
+            };
+
+            // Exact locations with addresses
+            const locations = [
+                {
+                    lat: 52.3638,
+                    lng: 4.9089,
+                    title: "UVA Roeterseiland Campus",
+                    address: "Roetersstraat 11, 1018 WB Amsterdam"
+                },
+                {
+                    lat: 52.3755,
+                    lng: 4.9013,
+                    title: "OBA Library",
+                    address: "Oosterdokskade 143, 1011 DL Amsterdam"
+                },
+                {
+                    lat: 52.3732,
+                    lng: 4.8886,
+                    title: "Spuistraat Workshop",
+                    address: "Spuistraat 17, 1012 SP Amsterdam"
+                }
+            ];
+
+            // Add markers with info windows
+            locations.forEach(location => {
+                const marker = new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.title,
+                    icon: redPin,
+                    animation: google.maps.Animation.DROP
+                });
+
+                // Info window content
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div class="map-info">
+                            <h4>${location.title}</h4>
+                            <p>${location.address}</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=${location.lat},${location.lng}"
+                               target="_blank"
+                               class="directions-link">
+                                Get Directions
+                            </a>
+                        </div>
+                    `
+                });
+
+                // Show info window on click
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                    map.panTo(marker.getPosition());
+                });
+            });
+        }
+    </script>
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY8U1rEzdhhywKXyZ1u4cr7hWhhWwH1Yg&callback=initMap">
+    </script>
+{% endblock %}

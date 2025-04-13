@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="orphaned-container">
+    <!-- Hero Section -->
+    <section class="orphaned-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">The Lifecycle of Amsterdam's Orphaned Bikes</h1>
+            <p class="hero-subtitle">Discover how to repurpose abandoned bikes.</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">200,000</span>
+                <span class="stat-label">Bikes abandoned at any time</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">30,000</span>
+                <span class="stat-label">Unclaimed bikes annually</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">75%</span>
+                <span class="stat-label">In need of repair when collected</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="section-header">
+            <h2>The Scale of the Problem</h2>
+            <div class="header-decoration"></div>
+        </div>
+        <div class="problem-content">
+            <div class="problem-text">
+                <p>Amsterdam is known as a bicycle city, but it has a downside — a rising number of abandoned bikes taking up space in the city. With 1.5 bikes per resident, there’s an estimated 15% of outdoor bikes which remain unused and block sidewalks and parking spaces.</p>
+                <p>The city’s problems with bike parking are infamous. Of the 800,000 bicycles in the city, more than 200,000 are abandoned at a given time, hindering pedestrians and cyclists alike.</p>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <i class="fas fa-parking"></i>
+                        <h3>Parking Congestion</h3>
+                        <p>Reduces available spaces for active cyclists by up to 25% in central areas</p>
+                    </div>
+                    <div class="impact-item">
+                        <i class="fas fa-walking"></i>
+                        <h3>Pedestrian Access</h3>
+                        <p>Blocks sidewalks and creates obstacles for people with mobility challenges</p>
+                    </div>
+                    <div class="impact-item">
+                        <i class="fas fa-eye"></i>
+                        <h3>Visual Pollution</h3>
+                        <p>Degrades the aesthetic appeal of our beautiful city streets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="problem-image">
+                <img src="{{ url_for('static', filename='images/abandoned-bike.jpg') }}" alt="Abandoned bikes in Amsterdam">
+                <div class="image-caption">Abandoned bike in Amsterdam; Sc: Reddit</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="section-header dark">
+            <h2>How Amsterdam Responds</h2>
+            <div class="header-decoration"></div>
+        </div>
+        <div class="solution-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Identification</h3>
+                    <p>The city places a clear zip tie around the frame and spokes of potentially abandoned bikes. This fragile marker breaks if the bike is moved.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Verification</h3>
+                    <p>After 3 months, inspectors return. Bikes with intact zip ties receive a removal notice, giving owners one final month to claim them.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Collection</h3>
+                    <p>Unclaimed bikes are taken to the central Fietsdepot (Bicycle Depot), where they're held for six weeks before being processed for reuse.</p>
+                </div>
+            </div>
+        </div>
+        <div class="depot-info">
+            <div class="depot-image">
+                <img src="{{ url_for('static', filename='images/bike_depot.jpg') }}" alt="Amsterdam's bicycle depot">
+            </div>
+            <div class="depot-text">
+                <h3>The Bicycle Depot Challenge</h3>
+                <p>Amsterdam's storage facility in the harbor area has space for 75,000 bikes annually, but now collects nearly 100,000. In 2023 alone, 48,000 bikes went unclaimed, with 75% needing significant repair.</p>
+                <p>This overwhelming volume has led to innovative solutions for giving these bikes new life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Life Section -->
+    <section class="new-life-section">
+        <div class="section-header">
+            <h2>Giving Bikes a Second Chance</h2>
+            <div class="header-decoration"></div>
+        </div>
+        <div class="life-content">
+            <div class="life-text">
+                <h3>From Amsterdam to Jordan: Bikes for Refugees</h3>
+                <p>In 2024, Amsterdam began an innovative program shipping unclaimed bikes to refugee camps in Jordan. The first shipment of 350 bikes is paving the way for a total of 1,400 bikes to be sent after repairs by volunteers.</p>
+                <p>These bikes serve multiple purposes in the camps:</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> Transportation for refugees moving within the camps</li>
+                    <li><i class="fas fa-check-circle"></i> Converted to rickshaws for moving people and goods</li>
+                    <li><i class="fas fa-check-circle"></i> Adapted into cargo bikes for small business ventures</li>
+                    <li><i class="fas fa-check-circle"></i> Providing economic opportunities through repair workshops</li>
+                </ul>
+                <div class="impact-quote">
+                    <blockquote>
+                        "What was once urban waste in Amsterdam becomes vital transportation and economic opportunity in refugee communities."
+                    </blockquote>
+                </div>
+            </div>
+            <div class="life-image">
+                <img src="{{ url_for('static', filename='images/refugee-bikes.jpg') }}" alt="Refugees using bikes in Jordan">
+                <div class="image-caption">Refugees in Jordan using repurposed Amsterdam bicycles</div>
+            </div>
+        </div>
+    </section><!-- Add this section between the "New Life Section" and "Call to Action" sections -->
+
+    <!-- How We Respond Section -->
+    <section class="response-section">
+        <div class="section-header">
+            <h2>How Bike Kitchen Responds</h2>
+            <div class="header-decoration"></div>
+            <p class="section-intro">We're tackling bike abandonment at its source by giving orphaned bikes new purpose right here in Amsterdam</p>
+        </div>
+    
+        <div class="response-content">
+            <div class="response-image">
+                <img src="{{ url_for('static', filename='images/workshop-parts.jpg') }}" alt="Organized bike parts in workshop">
+                <div class="image-badge">
+                    <i class="fas fa-recycle"></i>
+                    <span>85% of our parts come from rescued bikes</span>
+                </div>
+            </div>
+            
+            <div class="response-text">
+                <h3>Our Circular Economy Approach</h3>
+                <p>At Bike Kitchen, we've developed a sustainable system that benefits everyone:</p>
+                
+                <div class="benefit-cards">
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-wrench"></i></div>
+                        <h4>Affordable Repairs</h4>
+                        <p>Our workshop uses quality salvaged parts at 60-80% less than new retail prices</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h4>Skills Development</h4>
+                        <p>Learn bicycle mechanics from our volunteers using repurposed components</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+                        <h4>Environmental Impact</h4>
+                        <p>Each repaired bike prevents 5kg of metal waste and 75kg CO2 emissions</p>
+                    </div>
+                </div>
+                
+                <div class="process-steps">
+                    <h4>Our Salvage Process:</h4>
+                    <ol>
+                        <li><strong>Rescue:</strong> We collect bikes from the Fietsdepot before they're scrapped</li>
+                        <li><strong>Evaluate:</strong> Our mechanics assess each bike for usable components</li>
+                        <li><strong>Inventory:</strong> Quality parts are cleaned, organized, and made available</li>
+                        <li><strong>Educate:</strong> You learn to repair using these sustainable resources</li>
+                    </ol>
+                </div>
+                
+                <div class="impact-statement">
+                    <div class="impact-icon"><i class="fas fa-arrow-up"></i></div>
+                    <p>Last year, our community diverted <strong>4.2 tons</strong> of bike parts from landfills and helped <strong>1,200+ cyclists</strong> save money through our workshop</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="workshop-cta">
+            <div class="workshop-info">
+                <h3>Ready to join the movement?</h3>
+                <p>Visit our workshop to repair your bike, learn new skills, and contribute to Amsterdam's circular economy</p>
+                <div class="workshop-stats">
+                    <div class="stat">
+                        <span class="number">€15-35</span>
+                        <span class="label">Average repair savings</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">2-4</span>
+                        <span class="label">Hours to learn basic repairs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">100%</span>
+                        <span class="label">Satisfaction guaranteed</span>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ url_for('bike_kitchens') }}" class="btn btn-workshop">
+                <i class="fas fa-bicycle"></i> Find a Workshop Near You
+            </a>
+        </div>
+    </section>
+
+    
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2>Be Part of the Solution</h2>
+            <p>Your actions can help reduce bike abandonment and support meaningful reuse programs:</p>
+            <div class="action-grid">
+                <div class="action-item">
+                    <i class="fas fa-bicycle"></i>
+                    <h3>Properly Park</h3>
+                    <p>Always use designated parking areas and remove unused bikes promptly</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-tag"></i>
+                    <h3>Register Your Bike</h3>
+                    <p>Ensure your bike has proper identification to prevent accidental removal</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Volunteer</h3>
+                    <p>Help repair bikes destined for refugee communities</p>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-donate"></i>
+                    <h3>Donate</h3>
+                    <p>Support the costs of shipping bikes to where they're needed most</p>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Join Our Volunteer Team</a>
+                <a href="#" class="btn btn-secondary">Make a Donation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bike Lifecycle Infographic -->
+    <section class="infographic-section">
+        <div class="section-header">
+            <h2>The Journey of an Orphaned Bike</h2>
+            <div class="header-decoration"></div>
+        </div>
+        <div class="infographic">
+            <div class="lifecycle-stage">
+                <div class="stage-icon"><i class="fas fa-bicycle"></i></div>
+                <h3>Active Use</h3>
+                <p>Bike serves its owner for months or years</p>
+            </div>
+            <div class="lifecycle-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="lifecycle-stage">
+                <div class="stage-icon"><i class="fas fa-clock"></i></div>
+                <h3>Abandonment</h3>
+                <p>Left unused for extended period</p>
+            </div>
+            <div class="lifecycle-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="lifecycle-stage">
+                <div class="stage-icon"><i class="fas fa-tag"></i></div>
+                <h3>Identification</h3>
+                <p>Marked with zip tie by city inspectors</p>
+            </div>
+            <div class="lifecycle-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="lifecycle-stage">
+                <div class="stage-icon"><i class="fas fa-trash-alt"></i></div>
+                <h3>Removal Notice</h3>
+                <p>Sticker placed if unclaimed after 3 months</p>
+            </div>
+            <div class="lifecycle-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="lifecycle-stage">
+                <div class="stage-icon"><i class="fas fa-warehouse"></i></div>
+                <h3>Fietsdepot</h3>
+                <p>Held for 6 weeks awaiting owner</p>
+            </div>
+            <div class="lifecycle-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="lifecycle-stage">
+                <div class="stage-icon"><i class="fas fa-globe-africa"></i></div>
+                <h3>New Purpose</h3>
+                <p>Repaired and shipped to refugee camps</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="services-container">
+    <h1 class="page-title animate-pop">Repair Services</h1>
+    <p class="page-description animate-fade">Hover over bike parts to see repair details</p>
+
+    <!-- Background box for the bike -->
+    <div class="bike-background-box">
+        <div id="bike-container">
+            <!-- Full bike SVG -->
+            <svg id="bike-diagram" width="5000px" height="5000px" viewBox="-30 -30 100 90" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;">
+                <!-- Full bike SVG content -->
+                <g transform="matrix(1,0,0,1,0,0)">
+                    <!-- Wheels -->
+                    <g class="bike-part" data-part="wheel">
+                        <!-- Left wheel -->
+                        <path d="M24.629,607.37C13.583,607.37 4.629,598.416 4.629,587.37C4.629,576.324 13.583,567.37 24.629,567.37C35.675,567.37 44.629,576.324 44.629,587.37C44.629,598.416 35.675,607.37 24.629,607.37" transform="scale(0.32) translate(0, -500)" style="fill:#373837;"/>
+                        <!-- Right wheel -->
+                        <path d="M111.629,607.37C100.583,607.37 91.629,598.416 91.629,587.37C91.629,576.324 100.583,567.37 111.629,567.37C122.675,567.37 131.629,576.324 131.629,587.37C131.629,598.416 122.675,607.37 111.629,607.37" transform="scale(0.32) translate(0, -500)" style="fill:#373837;"/>
+                    </g>
+                    <g stroke="black" stroke-width="3">
+                        <line x1="250" y1="500" x2="100" y2="500" />
+                        <line x1="250" y1="500" x2="175" y2="350" />
+                        <line x1="250" y1="500" x2="250" y2="300" />
+                        <line x1="250" y1="500" x2="325" y2="350" />
+                        <line x1="250" y1="500" x2="400" y2="500" />
+                        <line x1="250" y1="500" x2="325" y2="650" />
+                        <line x1="250" y1="500" x2="250" y2="700" />
+                        <line x1="250" y1="500" x2="175" y2="650" />
+                    </g>
+                    
+                    <!-- Spokes for right wheel -->
+                    <g stroke="black" stroke-width="3">
+                        <line x1="750" y1="500" x2="600" y2="500" />
+                        <line x1="750" y1="500" x2="675" y2="350" />
+                        <line x1="750" y1="500" x2="750" y2="300" />
+                        <line x1="750" y1="500" x2="825" y2="350" />
+                        <line x1="750" y1="500" x2="900" y2="500" />
+                        <line x1="750" y1="500" x2="825" y2="650" />
+                        <line x1="750" y1="500" x2="750" y2="700" />
+                        <line x1="750" y1="500" x2="675" y2="650" />
+                    </g>
+                    
+                    
+
+                    
+                    
+                    <!-- Frame -->
+                    <g class="bike-part" data-part="frame">
+                        <path d="M107.863,612L107.862,547.576L102.008,547.598L37.861,612L45.317,612L93.208,564.107L102.443,554.742L102.695,611.999L107.863,612Z" transform="scale(0.32) translate(0, -500)" style="fill:#7C705B;"/>
+                        <path d="M58.714,584.538L91.008,545.912L93.603,548.13L61.522,586.396L58.714,584.538Z" transform="scale(0.32) translate(0, -500)" style="fill:#ECDBBB;"/>
+                        <path d="M47.515,555.21L90.137,537.703L91.398,540.875L49.101,558.176L47.515,555.21Z" transform="scale(0.32) translate(0, -500)" style="fill:#ECDBBB;"/>
+                        <path d="M56.603,586.017L40.814,539.433L44.06,538.375L59.654,584.596L56.603,586.017Z" transform="scale(0.32) translate(0, -500)" style="fill:#ECDBBB;"/>
+                        <path d="M23.91,585.615L48.366,557.986L50.894,560.279L26.589,587.636L23.91,585.615Z" transform="scale(0.32) translate(0, -500)" style="fill:#ECDBBB;"/>
+                        <path d="M107.907,586.932L86.819,536.567L89.985,535.286L110.833,585.26L107.907,586.932Z" transform="scale(0.32) translate(0, -500)" style="fill:#ECDBBB;"/>
+                    </g>
+
+                    <!-- Chain -->
+                    <g class="bike-part" data-part="chain">
+                        <path d="M60.419,579.514L60.94,581.078L66.194,581.154L64.841,582.917L68.988,585.587L67.425,586.991L68.02,592.407L65.896,592.219L63.027,595.795L61.425,594.044L56.656,595.274L56.284,593.336L52.67,590.914L54.532,589.797L53.154,586.332L55.054,585.401L55.24,582.084L57.066,582.308L60.419,579.514Z" transform="scale(0.32) translate(0, -500)" style="fill:#373837;"/>
+                    </g>
+
+                    <!-- Brakes -->
+                    <g class="bike-part" data-part="brakes">
+                        <path d="M73.486,585.076L72.819,590.742L83.99,590.242L85.323,583.909L73.486,585.076Z" transform="scale(0.32) translate(0, -500)" style="fill:#373837;"/>
+                        <path d="M62.866,588.464L63.351,591.474L73.405,590.595L73.385,587.28L62.866,588.464Z" transform="scale(0.32) translate(0, -500)" style="fill:#E4E2DC;"/>
+                    </g>
+
+                    <!-- Seat -->
+                    <g class="bike-part" data-part="seat">
+                        <path d="M33.446,537.741L34.025,541.743L49.651,541.742L54.279,537.741L33.446,537.741Z" transform="scale(0.32) translate(0, -500)" style="fill:#C09E3E;"/>
+                        <path d="M87.036,536.728L95.804,532.871L97.077,536.037L88.356,539.8L87.036,536.728Z" transform="scale(0.32) translate(0, -500)" style="fill:#ECDBBB;"/>
+                        <g transform="scale(0.32) translate(0, -500)" opacity="0.5">
+                            <path d="M95.804,532.87L96.546,536.326L91.296,538.576L86.82,536.566L95.804,532.87Z" style="fill:#171817;"/>
+                        </g>
+                        <g transform="scale(0.32) translate(0, -500)" opacity="0.5">
+                            <path d="M45.234,541.743L47.358,558.576L41.609,541.66L45.234,541.743Z" style="fill:#171817;"/>
+                        </g>
+                        <path d="M99.19,537.41L95.859,537.493L94.441,532.076L100.774,531.993L99.19,537.41Z" transform="scale(0.32) translate(0, -500)" style="fill:#CEAD80;"/>
+                    </g>
+
+                    <!-- Handlebars -->
+                    <g class="bike-part" data-part="handlebars">
+                        <path d="M23.106,579.327L18.106,586.077L23.481,594.077L31.606,587.077L23.106,579.327Z" transform="scale(0.32) translate(0, -500)" style="fill:#373837;"/>
+                        <path d="M112.358,579.701L103.441,585.909L108.816,593.909L116.941,586.909L112.358,579.701Z" transform="scale(0.32) translate(0, -500)" style="fill:#373837;"/>
+                    </g>
+                </g>
+            </svg>
+            
+            <!-- Popup for repair details -->
+            <div class="repair-popup" id="popup"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .services-container {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 2rem;
+        text-align: center;
+        text-shadow: #3498db;
+    }
+
+    /* Background box for the bike */
+    .bike-background-box {
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 1rem auto;
+        max-width: 800px;
+        max-height: 550px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #bike-container {
+        position: relative;
+        width: 900px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #bike-diagram {
+        width: 800px;
+        height: auto;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        transform: translateX(-20px);
+    }
+
+    .bike-part {
+        cursor: pointer;
+        transition: opacity 0.3s ease, fill 0.3s ease;
+    }
+
+    .bike-part:hover {
+        opacity: 0.8;
+    }
+
+    .repair-popup {
+        position: absolute;
+        background: white;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        pointer-events: none;
+        z-index: 100;
+        min-width: 160px;
+        transform: translate(-50%, -120%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        text-align: left;
+    }
+
+    .repair-popup.active {
+        opacity: 1;
+    }
+
+    .difficulty-bubbles {
+        display: flex;
+        gap: 4px;
+        margin-top: 0.5rem;
+    }
+
+    .bubble {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #e0e0e0;
+    }
+
+    .bubble.filled {
+        background: #3498db;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const repairData = {
+            "wheel": { 
+                time: "30 min", 
+                difficulty: 2,
+                description: "Wheel repair includes tube replacement, spoke adjustment, and truing"
+            },
+            "chain": { 
+                time: "45 min", 
+                difficulty: 3,
+                description: "Chain service includes cleaning, lubrication, and tension adjustment"
+            },
+            "brakes": { 
+                time: "25 min", 
+                difficulty: 2,
+                description: "Brake service includes pad replacement and cable adjustment"
+            },
+            "seat": { 
+                time: "10 min", 
+                difficulty: 1,
+                description: "Seat adjustment for proper height and angle"
+            },
+            "handlebars": { 
+                time: "40 min",
+                difficulty: 4,
+                description: "Handlebar service includes grip replacement and alignment"
+            },
+            "frame": { 
+                time: "60 min", 
+                difficulty: 5,
+                description: "Frame service includes detailed inspection and minor repairs"
+            }
+        };
+
+        document.querySelectorAll('.bike-part').forEach(part => {
+            part.addEventListener('mouseenter', (e) => {
+                const popup = document.getElementById('popup');
+                const partName = e.currentTarget.dataset.part;
+                const data = repairData[partName];
+                
+                // Create difficulty bubbles
+                const bubbles = Array.from({length: 3}, (_, i) => 
+                    `<div class="bubble ${i < data.difficulty ? 'filled' : ''}"></div>`
+                ).join('');
+
+                popup.innerHTML = `
+                    <h4>${partName.charAt(0).toUpperCase() + partName.slice(1)}</h4>
+                    <p>${data.description}</p>
+                    <p>Time: ${data.time}</p>
+                    <div class="difficulty">
+                        <span>Difficulty:</span>
+                        <div class="difficulty-bubbles">${bubbles}</div>
+                    </div>
+                `;
+                
+                // Position popup relative to SVG
+                const rect = e.currentTarget.getBoundingClientRect();
+                const bikeContainer = document.getElementById('bike-container').getBoundingClientRect();
+                
+                popup.style.left = `${rect.left + rect.width/2 - bikeContainer.left}px`;
+                popup.style.top = `${rect.top - bikeContainer.top}px`;
+                popup.classList.add('active');
+            });
+
+            part.addEventListener('mouseleave', () => {
+                const popup = document.getElementById('popup');
+                popup.classList.remove('active');
+            });
+        });
+    });
+</script>
+{% endblock %}
